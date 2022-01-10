@@ -4,6 +4,26 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SearchContainer from "./components/SearchContainer";
 import DefaultContainer from "./components/DefaultContainer";
+import styled from "styled-components";
+
+const Wrapper = styled.section`
+  background-color: gray;
+`;
+
+const Header = styled.header`
+  display: grid;
+  place-items: center;
+`;
+
+const FormWrapper = styled.div`
+  border: 2px solid red;
+  padding: 1rem;
+  width: 50%;
+  background-color: lightblue;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+`;
 
 export default function Search() {
   const [searchInput, setSearchInput] = useState("");
@@ -35,23 +55,25 @@ export default function Search() {
   }, []);
   return (
     <div>
-      <h2>This is the search page</h2>
-      <p>sdfdsfasdafasd</p>
-      <header>
+      <Header>
         <h2>Search Seiyuu</h2>
-      </header>
-      <Form
-        searchInput={searchInput}
-        setSearchInput={setSearchInput}
-        searchSeiyuu={searchSeiyuu}
-        seiyuu={seiyuu}
-        handleSearch={handleSearch}
-      />
-      {seiyuu.length > 1 ? (
-        <SearchContainer seiyuu={seiyuu} />
-      ) : (
-        <DefaultContainer topSeiyuu={topSeiyuu} />
-      )}
+      </Header>
+      <Wrapper>
+        <FormWrapper>
+          <Form
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+            searchSeiyuu={searchSeiyuu}
+            seiyuu={seiyuu}
+            handleSearch={handleSearch}
+          />
+        </FormWrapper>
+        {seiyuu.length > 1 ? (
+          <SearchContainer seiyuu={seiyuu} />
+        ) : (
+          <DefaultContainer topSeiyuu={topSeiyuu} />
+        )}
+      </Wrapper>
     </div>
   );
 }
