@@ -10,7 +10,7 @@ const Card = styled.div`
 
 export default function SeiyuuCard({ key, name, famName, givenName, imgSrc }) {
   return (
-    <Card>
+    <Card key={key}>
       <img src={imgSrc} alt={name} />
       <h2>{name}</h2>
       <h2>

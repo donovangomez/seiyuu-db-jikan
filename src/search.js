@@ -68,7 +68,7 @@ export default function Search() {
             handleSearch={handleSearch}
           />
         </FormWrapper>
-        {seiyuu.length > 1 ? (
+        {seiyuu.length > 0 ? (
           <SearchContainer seiyuu={seiyuu} />
         ) : (
           <DefaultContainer topSeiyuu={topSeiyuu} />

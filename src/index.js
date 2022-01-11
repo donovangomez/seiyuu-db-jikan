@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Search from "./search";
+import Details from "./routes/Details";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="search" element={<Search />} />
+        <Route path="seiyuu/:id" element={<Details />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

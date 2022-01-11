@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SeiyuuCard from "./SeiyuuCard";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -21,17 +22,19 @@ export default function DefaultContainer({ topSeiyuu }) {
   return (
     <section>
       <Header>
-        <h2>This is the default container</h2>
+        <h2>Popular Today</h2>
       </Header>
       <Wrapper>
         {topSeiyuu.map((va) => (
-          <SeiyuuCard
-            key={va.mal_id}
-            name={va.name}
-            famName={va.family_name}
-            givenName={va.given_name}
-            imgSrc={va.images.jpg.image_url}
-          />
+          <Link to={`/seiyuu/${va.mal_id}`}>
+            <SeiyuuCard
+              key={va.mal_id}
+              name={va.name}
+              famName={va.family_name}
+              givenName={va.given_name}
+              imgSrc={va.images.jpg.image_url}
+            />
+          </Link>
         ))}
       </Wrapper>
     </section>
