@@ -21,8 +21,8 @@ export default function Details() {
     <div>
       <h2>{actress.name}</h2>
       {/* PICTURE BECOMES UNDEFINED ON PAGE LOAD FIX!!!! */}
-      <img src={actress.images.jpg.image_url} />
-      <p>{actress.about}</p>
+      {/* <img src={actress.images.jpg.image_url} /> */}
+      {/* <p>{actress.about}</p> */}
     </div>
   );
 }

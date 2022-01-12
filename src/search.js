@@ -8,6 +8,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.section`
   background-color: gray;
+  min-height: 100vh;
 `;
 
 const Header = styled.header`

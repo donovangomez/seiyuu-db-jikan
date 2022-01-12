@@ -26,9 +26,8 @@ export default function DefaultContainer({ topSeiyuu }) {
       </Header>
       <Wrapper>
         {topSeiyuu.map((va) => (
-          <Link to={`/seiyuu/${va.mal_id}`}>
+          <Link key={va.mal_id} to={`/seiyuu/${va.mal_id}`}>
             <SeiyuuCard
-              key={va.mal_id}
               name={va.name}
               famName={va.family_name}
               givenName={va.given_name}
