@@ -29,6 +29,8 @@ export default function Search() {
   const [searchInput, setSearchInput] = useState("");
   const [seiyuu, setSeiyuu] = useState([]);
   const [topSeiyuu, setTopSeiyuu] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const fetchTopSeiyuu = async () => {
     const res = await fetch(
       "https://api.jikan.moe/v4/people?order_by=favorites&sort=desc&limit=15"
@@ -43,12 +45,14 @@ export default function Search() {
     setSearchInput("");
   };
   const searchSeiyuu = async (query) => {
+    setLoading(true);
     const res = await fetch(
       `https://api.jikan.moe/v4/people?q=${query}&order_by=favorites&sort=desc`
     );
     const data = await res.json();
     setSeiyuu(data.data);
     console.log(seiyuu);
+    setLoading(false);
   };
   useEffect(() => {
     fetchTopSeiyuu();
@@ -69,7 +73,11 @@ export default function Search() {
           />
         </FormWrapper>
         {seiyuu.length > 0 ? (
-          <SearchContainer seiyuu={seiyuu} />
+          <SearchContainer
+            seiyuu={seiyuu}
+            loading={loading}
+            setLoading={setLoading}
+          />
         ) : (
           <DefaultContainer topSeiyuu={topSeiyuu} />
         )}
