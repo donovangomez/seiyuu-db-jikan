@@ -56,7 +56,9 @@ export default function Search() {
     setLoading(false);
   };
   useEffect(() => {
+    setLoading(true);
     fetchTopSeiyuu();
+    setLoading(false);
   }, []);
   return (
     <div>
@@ -80,7 +82,11 @@ export default function Search() {
             setLoading={setLoading}
           />
         ) : (
-          <DefaultContainer topSeiyuu={topSeiyuu} />
+          <DefaultContainer
+            topSeiyuu={topSeiyuu}
+            loading={loading}
+            setLoading={setLoading}
+          />
         )}
       </Wrapper>
     </div>

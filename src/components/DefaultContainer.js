@@ -17,25 +17,31 @@ const Header = styled.header`
   margin: 0 auto;
 `;
 
-export default function DefaultContainer({ topSeiyuu }) {
+export default function DefaultContainer({ topSeiyuu, loading, setLoading }) {
   console.log(topSeiyuu);
   return (
     <section>
-      <Header>
-        <h2>Popular Today</h2>
-      </Header>
-      <Wrapper>
-        {topSeiyuu.map((va) => (
-          <Link key={va.mal_id} to={`/seiyuu/${va.mal_id}`}>
-            <SeiyuuCard
-              name={va.name}
-              famName={va.family_name}
-              givenName={va.given_name}
-              imgSrc={va.images.jpg.image_url}
-            />
-          </Link>
-        ))}
-      </Wrapper>
+      {loading ? (
+        <h2>Loading...</h2>
+      ) : (
+        <>
+          <Header>
+            <h2>Popular Today</h2>
+          </Header>
+          <Wrapper>
+            {topSeiyuu.map((va) => (
+              <Link key={va.mal_id} to={`/seiyuu/${va.mal_id}`}>
+                <SeiyuuCard
+                  name={va.name}
+                  famName={va.family_name}
+                  givenName={va.given_name}
+                  imgSrc={va.images.jpg.image_url}
+                />
+              </Link>
+            ))}
+          </Wrapper>
+        </>
+      )}
     </section>
   );
 }
