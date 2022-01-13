@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 90%;
-  background-color: green;
+  background-color: #edf2f7;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -13,8 +13,8 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   width: 90%;
-  border: 2px solid red;
   margin: 0 auto;
+  padding: 2rem 0;
 `;
 
 export default function DefaultContainer({ topSeiyuu, loading, setLoading }) {

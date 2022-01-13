@@ -7,21 +7,22 @@ import DefaultContainer from "./components/DefaultContainer";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
-  background-color: gray;
   min-height: 100vh;
 `;
 
 const Header = styled.header`
   display: grid;
   place-items: center;
+  padding: 3rem;
+  background-color: #de4d86;
 `;
 
 const FormWrapper = styled.div`
-  border: 2px solid red;
   padding: 1rem;
-  width: 50%;
-  background-color: lightblue;
-  margin: 0 auto;
+  width: 30%;
+  background-color: white;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  margin: -2rem auto;
   display: flex;
   justify-content: center;
 `;

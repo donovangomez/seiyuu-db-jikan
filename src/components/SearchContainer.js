@@ -12,7 +12,6 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   width: 90%;
-  border: 2px solid red;
   margin: 0 auto;
 `;
 
