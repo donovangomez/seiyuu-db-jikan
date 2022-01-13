@@ -4,19 +4,41 @@ import styled from "styled-components";
 const Card = styled.div`
   background-color: #fff;
   border-radius: 5px;
-  width: 20rem;
+  width: 25rem;
   margin: 0.55rem;
+  display: flex;
+`;
+
+const CardLeft = styled.div`
+  flex: 1;
+`;
+
+const CardRight = styled.div`
+  flex: 1;
+`;
+
+const Image = styled.img`
+  height: 150px;
+  width: 150px;
+  border: 2px solid red;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 100%;
 `;
 
 export default function SeiyuuCard({ key, name, famName, givenName, imgSrc }) {
   return (
     <Card key={key}>
-      <img src={imgSrc} alt={name} />
-      <h2>{name}</h2>
-      <h2>
-        {famName}
-        {givenName}
-      </h2>
+      <CardLeft>
+        <Image src={imgSrc} alt={name} />
+      </CardLeft>
+      <CardRight>
+        <h2>{name}</h2>
+        <h2>
+          {famName}
+          {givenName}
+        </h2>
+      </CardRight>
     </Card>
   );
 }
