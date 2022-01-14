@@ -18,11 +18,10 @@ const CardRight = styled.div`
 `;
 
 const Image = styled.img`
-  height: 150px;
-  width: 150px;
-  border: 2px solid red;
+  height: 200px;
+  width: 200px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   border-radius: 100%;
 `;
 

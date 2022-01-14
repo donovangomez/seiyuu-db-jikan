@@ -4,10 +4,11 @@ import SeiyuuCard from "./SeiyuuCard";
 
 const Wrapper = styled.div`
   width: 90%;
-  background-color: green;
+  background-color: #edf2f7;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Header = styled.header`

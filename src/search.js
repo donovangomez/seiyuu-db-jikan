@@ -8,6 +8,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.section`
   min-height: 100vh;
+  background-color: #e2e8f0;
 `;
 
 const Header = styled.header`
@@ -15,16 +16,20 @@ const Header = styled.header`
   place-items: center;
   padding: 3rem;
   background-color: #de4d86;
+  position: relative;
+  z-index: 1;
 `;
 
 const FormWrapper = styled.div`
-  padding: 1rem;
+  position: relative;
+  padding: 1rem 2rem;
   width: 30%;
   background-color: white;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
   margin: -2rem auto;
   display: flex;
   justify-content: center;
+  z-index: 12;
 `;
 
 export default function Search() {
