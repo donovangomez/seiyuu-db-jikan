@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SeiyuuCard from "./SeiyuuCard";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -14,6 +15,11 @@ const Wrapper = styled.div`
 const Header = styled.header`
   width: 90%;
   margin: 0 auto;
+`;
+
+const CardLink = styled(Link)`
+  color: #4a5568;
+  text-decoration: none;
 `;
 
 export default function SearchContainer({
@@ -33,13 +39,15 @@ export default function SearchContainer({
           </Header>
           <Wrapper>
             {seiyuu.map((sei) => (
-              <SeiyuuCard
-                key={sei.mal_id}
-                name={sei.name}
-                famName={sei.family_name}
-                givenName={sei.given_name}
-                imgSrc={sei.images.jpg.image_url}
-              />
+              <CardLink key={sei.mal_id} to={`/seiyuu/${sei.mal_id}`}>
+                <SeiyuuCard
+                  key={sei.mal_id}
+                  name={sei.name}
+                  famName={sei.family_name}
+                  givenName={sei.given_name}
+                  imgSrc={sei.images.jpg.image_url}
+                />
+              </CardLink>
             ))}
           </Wrapper>
         </>

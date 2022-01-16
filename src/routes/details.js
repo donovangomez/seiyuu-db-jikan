@@ -1,6 +1,41 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+import { findByLabelText } from "@testing-library/react";
+
+const Section = styled.section`
+  min-height: 100vh;
+`;
+
+const SeiyuuWrapper = styled.div`
+  background-color: #edf2f7;
+  width: 85%;
+  margin: 0 auto;
+`;
+
+const SeiyuuImage = styled.img`
+  width: 60%;
+  height: auto;
+`;
+
+const ImgWrapper = styled.div`
+  flex: 1;
+  display: grid;
+  place-items: center;
+`;
+
+const SeiyuuHeader = styled.div`
+  display: flex;
+`;
+
+const Name = styled.h1`
+  font-size: 5rem;
+`;
+
+const NameWrapper = styled.div`
+  flex: 1;
+`;
 
 export default function Details() {
   const [actress, setActress] = useState("");
@@ -27,15 +62,24 @@ export default function Details() {
   return (
     <div>
       {loading ? (
-        <h2>Loading yo</h2>
+        <Section>
+          <h2>Loading yo</h2>
+        </Section>
       ) : (
-        <div>
-          <h2>{actress.name}</h2>
-          <img src={imgSrc} />
-          <p>{actress.about}</p>
-        </div>
+        <Section>
+          <SeiyuuWrapper>
+            <SeiyuuHeader>
+              <ImgWrapper>
+                <SeiyuuImage src={imgSrc} />
+              </ImgWrapper>
+              <NameWrapper>
+                <Name>{actress.name}</Name>
+              </NameWrapper>
+            </SeiyuuHeader>
+            <p>{actress.about}</p>
+          </SeiyuuWrapper>
+        </Section>
       )}
-      {/* PICTURE BECOMES UNDEFINED ON PAGE LOAD FIX!!!! */}
     </div>
   );
 }
