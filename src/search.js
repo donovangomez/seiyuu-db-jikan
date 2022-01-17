@@ -1,10 +1,12 @@
 import React from "react";
+import "./App.css";
 import Form from "./components/Form";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SearchContainer from "./components/SearchContainer";
 import DefaultContainer from "./components/DefaultContainer";
 import styled from "styled-components";
+import Navbar from "./components/Navbar";
 
 const Wrapper = styled.section`
   min-height: 100vh;
