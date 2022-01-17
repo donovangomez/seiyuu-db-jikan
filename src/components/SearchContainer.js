@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SeiyuuCard from "./SeiyuuCard";
 import { Link } from "react-router-dom";
+import loadingGif from "../assets/tomori.gif";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -10,6 +11,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+`;
+
+const LoadingWrapper = styled.section`
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 `;
 
 const Header = styled.header`
@@ -31,7 +38,12 @@ export default function SearchContainer({
   return (
     <section>
       {loading ? (
-        <h2>Loading</h2>
+        <LoadingWrapper>
+          <figure>
+            <img src={loadingGif} />
+            <figcaption>Loading...</figcaption>
+          </figure>
+        </LoadingWrapper>
       ) : (
         <>
           <Header>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SeiyuuCard from "./SeiyuuCard";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import loadingGif from "../assets/tomori.gif";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -19,6 +20,12 @@ const Header = styled.header`
   padding: 2rem 0;
 `;
 
+const LoadingWrapper = styled.section`
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+`;
+
 const CardLink = styled(Link)`
   color: #4a5568;
   text-decoration: none;
@@ -29,7 +36,12 @@ export default function DefaultContainer({ topSeiyuu, loading, setLoading }) {
   return (
     <section>
       {loading ? (
-        <h2>Loading...</h2>
+        <LoadingWrapper>
+          <figure>
+            <img src={loadingGif} />
+            <figcaption>Loading...</figcaption>
+          </figure>
+        </LoadingWrapper>
       ) : (
         <>
           <Header>

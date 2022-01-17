@@ -30,6 +30,7 @@ const FormWrapper = styled.div`
   display: flex;
   justify-content: center;
   z-index: 12;
+  border-radius: 10px;
 `;
 
 export default function Search() {

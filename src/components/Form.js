@@ -8,6 +8,7 @@ const FormContainer = styled.form`
 
 const InputWrapper = styled.div`
   flex: 3;
+  border-radius: 5px;
 `;
 
 const ButtonWrapper = styled.div`

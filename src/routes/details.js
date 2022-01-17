@@ -3,19 +3,27 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { marked } from "marked";
+import loadingGif from "../assets/tomori.gif";
 
 const Section = styled.section`
   min-height: 100vh;
+`;
+
+const LoadingWrapper = styled.section`
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 `;
 
 const SeiyuuWrapper = styled.div`
   background-color: #edf2f7;
   width: 85%;
   margin: 0 auto;
+  padding: 1rem;
 `;
 
 const SeiyuuImage = styled.img`
-  width: 60%;
+  width: 50%;
   height: auto;
 `;
 
@@ -72,9 +80,12 @@ export default function Details() {
   return (
     <div>
       {loading ? (
-        <Section>
-          <h2>Loading yo</h2>
-        </Section>
+        <LoadingWrapper>
+          <figure>
+            <img src={loadingGif} />
+            <figcaption>Loading...</figcaption>
+          </figure>
+        </LoadingWrapper>
       ) : (
         <Section>
           <SeiyuuWrapper>
