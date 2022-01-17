@@ -7,6 +7,11 @@ const Card = styled.div`
   width: 25rem;
   margin: 0.55rem;
   display: flex;
+  transition: 500ms;
+
+  &:hover {
+    transform: translateY(-15px);
+  }
 `;
 
 const CardLeft = styled.div`
