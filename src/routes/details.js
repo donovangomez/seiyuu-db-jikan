@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { marked } from "marked";
+import { Link } from "react-router-dom";
 import loadingGif from "../assets/tomori.gif";
 
 const Section = styled.section`
@@ -106,6 +107,7 @@ export default function Details() {
               <About dangerouslySetInnerHTML={{ __html: markdown }} />
             </div>
           </SeiyuuWrapper>
+          <Link to="/search">Back to Search</Link>
         </Section>
       )}
     </div>
