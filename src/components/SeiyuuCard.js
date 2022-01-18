@@ -20,6 +20,10 @@ const CardLeft = styled.div`
 
 const CardRight = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Image = styled.img`

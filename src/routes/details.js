@@ -50,6 +50,9 @@ const JpName = styled.h2`
 
 const NameWrapper = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const HeaderH2 = styled.h2`

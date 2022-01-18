@@ -16,11 +16,28 @@ const ButtonWrapper = styled.div`
   display: grid;
 `;
 
+const Button = styled.button`
+  font-size: 1.1rem;
+  background-color: transparent;
+  color: #68438b;
+  cursor: pointer;
+  transition: 200ms;
+
+  &:hover {
+    background-color: #68438b;
+    color: #fff;
+  }
+`;
+
 const Input = styled.input`
   padding: 0.35rem;
   flex: 3;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+
+  &:focus {
+    outline: 2px solid #68438b;
+  }
 `;
 
 export default function Form({
@@ -42,7 +59,7 @@ export default function Form({
         />
       </InputWrapper>
       <ButtonWrapper>
-        <button onClick={handleSearch}>search</button>
+        <Button onClick={handleSearch}>search</Button>
       </ButtonWrapper>
     </FormContainer>
   );

@@ -14,10 +14,14 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
+const Section = styled.section`
+  margin-top: 3rem;
+`;
+
 const Header = styled.header`
   width: 90%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 5rem 0;
 `;
 
 const LoadingWrapper = styled.section`
@@ -34,7 +38,7 @@ const CardLink = styled(Link)`
 export default function DefaultContainer({ topSeiyuu, loading, setLoading }) {
   console.log(topSeiyuu);
   return (
-    <section>
+    <Section>
       {loading ? (
         <LoadingWrapper>
           <figure>
@@ -61,6 +65,6 @@ export default function DefaultContainer({ topSeiyuu, loading, setLoading }) {
           </Wrapper>
         </>
       )}
-    </section>
+    </Section>
   );
 }

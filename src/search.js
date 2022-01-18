@@ -42,6 +42,7 @@ export default function Search() {
   const [seiyuu, setSeiyuu] = useState([]);
   const [topSeiyuu, setTopSeiyuu] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const fetchTopSeiyuu = async () => {
     const res = await fetch(
@@ -86,18 +87,23 @@ export default function Search() {
             handleSearch={handleSearch}
           />
         </FormWrapper>
+
         {seiyuu.length > 0 ? (
-          <SearchContainer
-            seiyuu={seiyuu}
-            loading={loading}
-            setLoading={setLoading}
-          />
+          <div>
+            <SearchContainer
+              seiyuu={seiyuu}
+              loading={loading}
+              setLoading={setLoading}
+            />
+          </div>
         ) : (
-          <DefaultContainer
-            topSeiyuu={topSeiyuu}
-            loading={loading}
-            setLoading={setLoading}
-          />
+          <div>
+            <DefaultContainer
+              topSeiyuu={topSeiyuu}
+              loading={loading}
+              setLoading={setLoading}
+            />
+          </div>
         )}
       </Wrapper>
     </div>
