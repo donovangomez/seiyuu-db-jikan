@@ -16,10 +16,12 @@ const Wrapper = styled.section`
 const Header = styled.header`
   display: grid;
   place-items: center;
-  padding: 3rem;
-  background-color: #de4d86;
+  padding: 5rem;
+  background-color: #68438b;
   position: relative;
   z-index: 1;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
 `;
 
 const FormWrapper = styled.div`

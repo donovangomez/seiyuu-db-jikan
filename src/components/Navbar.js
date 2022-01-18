@@ -28,7 +28,9 @@ export default function Navbar() {
     <Nav>
       <NavList>
         <div>
-          <External href="https://www.fakku.net/">Github</External>
+          <External href="https://www.youtube.com/watch?v=1y5PZ_fqgLM">
+            Github
+          </External>
         </div>
       </NavList>
     </Nav>

@@ -20,7 +20,7 @@ const SeiyuuWrapper = styled.div`
   background-color: #edf2f7;
   width: 85%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 4rem;
 `;
 
 const SeiyuuImage = styled.img`
@@ -40,18 +40,28 @@ const SeiyuuHeader = styled.div`
 
 const Name = styled.h1`
   font-size: 5rem;
+  font-family: "Roboto", sans-serif;
 `;
 
 const JpName = styled.h2`
   font-size: 4rem;
+  font-family: "Roboto", sans-serif;
 `;
 
 const NameWrapper = styled.div`
   flex: 1;
 `;
 
+const HeaderH2 = styled.h2`
+  margin: 2rem 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+`;
+
 const About = styled.div`
   font-size: 1.15rem;
+  line-height: 2;
+  letter-spacing: 0.25px;
 `;
 
 export default function Details() {
@@ -103,7 +113,7 @@ export default function Details() {
               </NameWrapper>
             </SeiyuuHeader>
             <div>
-              <h2>Biography</h2>
+              <HeaderH2>Biography</HeaderH2>
               <About dangerouslySetInnerHTML={{ __html: markdown }} />
             </div>
           </SeiyuuWrapper>

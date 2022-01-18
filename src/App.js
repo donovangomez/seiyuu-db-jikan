@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import seiyuu from "./assets/ll-seiyuu.jpg";
 
 const SplashPage = styled.section`
   min-height: 100vh;
@@ -16,8 +17,9 @@ const FlexLeft = styled.div`
 
 const FlexRight = styled.div`
   flex: 1;
-  display: grid;
-  place-items: center;
+  background-image: url("${seiyuu}");
+  background-size: cover;
+  background-position: center;
 `;
 
 const FlexContent = styled.div`
@@ -33,9 +35,7 @@ function App() {
           <Link to="./search">Search Seiyuu!</Link>
         </FlexContent>
       </FlexLeft>
-      <FlexRight>
-        <p>RIKYAKOOOO</p>
-      </FlexRight>
+      <FlexRight></FlexRight>
     </SplashPage>
   );
 }

@@ -19,8 +19,7 @@ const ButtonWrapper = styled.div`
 const Input = styled.input`
   padding: 0.35rem;
   flex: 3;
-  width: 99%;
-  margin-right: 0.25rem;
+  width: 100%;
   font-size: 1.25rem;
 `;
 
