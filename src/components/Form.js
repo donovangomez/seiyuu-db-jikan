@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const FormContainer = styled.form`
-  width: 100%;
+  max-width: 100%;
   display: flex;
 `;
 
