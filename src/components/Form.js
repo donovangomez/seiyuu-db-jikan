@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { FaSearch } from "react-icons/fa";
 
 const FormContainer = styled.form`
-  max-width: 100%;
+  width: 100%;
   display: flex;
+  align-items: center;
 `;
 
 const InputWrapper = styled.div`
   flex: 3;
   border-radius: 5px;
+  width: 100%;
 `;
 
 const ButtonWrapper = styled.div`
@@ -18,10 +21,15 @@ const ButtonWrapper = styled.div`
 
 const Button = styled.button`
   font-size: 1.1rem;
+  padding: 0.4rem;
+  margin: 0;
+  height: 100%;
+  width: 50px;
   background-color: transparent;
   color: #68438b;
   cursor: pointer;
   transition: 200ms;
+  border: 1px solid;
 
   &:hover {
     background-color: #68438b;
@@ -36,7 +44,7 @@ const Input = styled.input`
   font-size: 1.1rem;
 
   &:focus {
-    outline: 2px solid #68438b;
+    outline: 1px solid #68438b;
   }
 `;
 
@@ -59,7 +67,9 @@ export default function Form({
         />
       </InputWrapper>
       <ButtonWrapper>
-        <Button onClick={handleSearch}>search</Button>
+        <Button onClick={handleSearch}>
+          <FaSearch />
+        </Button>
       </ButtonWrapper>
     </FormContainer>
   );

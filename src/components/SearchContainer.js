@@ -13,6 +13,10 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
+const Section = styled.section`
+  margin-top: 6rem;
+`;
+
 const LoadingWrapper = styled.section`
   min-height: 100vh;
   display: grid;
@@ -36,7 +40,7 @@ export default function SearchContainer({
   setLoading,
 }) {
   return (
-    <section>
+    <Section>
       {loading ? (
         <LoadingWrapper>
           <figure>
@@ -64,16 +68,6 @@ export default function SearchContainer({
           </Wrapper>
         </>
       )}
-      {/* <h2>This is the Search Container component</h2>
-      {seiyuu.map((sei) => (
-        <SeiyuuCard
-          key={sei.mal_id}
-          name={sei.name}
-          famName={sei.family_name}
-          givenName={sei.given_name}
-          imgSrc={sei.images.jpg.image_url}
-        />
-      ))} */}
-    </section>
+    </Section>
   );
 }

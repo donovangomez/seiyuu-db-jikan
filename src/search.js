@@ -27,7 +27,7 @@ const Header = styled.header`
 const FormWrapper = styled.div`
   position: relative;
   padding: 1rem 2rem;
-  max-width: 30rem;
+  max-width: 35rem;
   background-color: white;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
   margin: -2rem auto;
