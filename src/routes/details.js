@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { marked } from "marked";
 import { Link } from "react-router-dom";
+import { FaChevronLeft } from "react-icons/fa";
 import loadingGif from "../assets/tomori.gif";
 
 const Section = styled.section`
@@ -67,6 +68,10 @@ const About = styled.div`
   letter-spacing: 0.25px;
 `;
 
+const BackBtnWrapper = styled.div`
+  margin-bottom: 2rem;
+`;
+
 export default function Details() {
   const [actress, setActress] = useState("");
   const [loading, setLoading] = useState(false);
@@ -93,6 +98,11 @@ export default function Details() {
 
   return (
     <div>
+      <BackBtnWrapper>
+        <Link to="/search">
+          <FaChevronLeft /> Back to Search
+        </Link>
+      </BackBtnWrapper>
       {loading ? (
         <LoadingWrapper>
           <figure>
@@ -120,7 +130,6 @@ export default function Details() {
               <About dangerouslySetInnerHTML={{ __html: markdown }} />
             </div>
           </SeiyuuWrapper>
-          <Link to="/search">Back to Search</Link>
         </Section>
       )}
     </div>
