@@ -59,11 +59,16 @@ export default function Search() {
   };
   const searchSeiyuu = async (query) => {
     setLoading(true);
-    const res = await fetch(
-      `https://api.jikan.moe/v4/people?q=${query}&order_by=favorites&sort=desc`
-    );
-    const data = await res.json();
-    setSeiyuu(data.data);
+    try {
+      const res = await fetch(
+        `https://api.jikan.moe/v4/people?q=${query}&order_by=favorites&sort=desc`
+      );
+      const data = await res.json();
+      setSeiyuu(data.data);
+    } catch (e) {
+      console.log("error!!!", e);
+      setError(error);
+    }
     console.log(seiyuu);
     setLoading(false);
   };
@@ -87,7 +92,6 @@ export default function Search() {
             handleSearch={handleSearch}
           />
         </FormWrapper>
-
         {seiyuu.length > 0 ? (
           <div>
             <SearchContainer
@@ -102,6 +106,7 @@ export default function Search() {
               topSeiyuu={topSeiyuu}
               loading={loading}
               setLoading={setLoading}
+              error={error}
             />
           </div>
         )}

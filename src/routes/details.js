@@ -75,16 +75,25 @@ export default function Details() {
     "https://pbs.twimg.com/media/FI8DFOcXIAs2dnB?format=jpg&name=large"
   );
   const [markdown, setMarkdown] = useState("");
+  const [error, setError] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const { id } = useParams();
 
   const fetchActress = async () => {
-    setLoading(true);
-    const res = await fetch("https://api.jikan.moe/v4/people/" + id);
-    const data = await res.json();
-    console.log(data.data);
-    setActress(data.data);
-    setImgSrc(data.data.images.jpg.image_url);
-    setMarkdown(marked(data.data.about));
+    try {
+      setLoading(true);
+      const res = await fetch("https://api.jikan.moe/v4/people/" + id);
+      const data = await res.json();
+      console.log(data.data);
+      setActress(data.data);
+      setImgSrc(data.data.images.jpg.image_url);
+      setMarkdown(marked(data.data.about));
+    } catch (e) {
+      console.log(e);
+      alert(`Oh no error ${e}!! Refresh the page`);
+      setError(true);
+      setErrorMsg(e);
+    }
     setLoading(false);
   };
 

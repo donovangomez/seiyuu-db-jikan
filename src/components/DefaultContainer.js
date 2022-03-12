@@ -35,7 +35,12 @@ const CardLink = styled(Link)`
   text-decoration: none;
 `;
 
-export default function DefaultContainer({ topSeiyuu, loading, setLoading }) {
+export default function DefaultContainer({
+  topSeiyuu,
+  loading,
+  setLoading,
+  error,
+}) {
   console.log(topSeiyuu);
   return (
     <Section>
