@@ -68,10 +68,6 @@ const About = styled.div`
   letter-spacing: 0.25px;
 `;
 
-const BackBtnWrapper = styled.div`
-  margin-bottom: 2rem;
-`;
-
 export default function Details() {
   const [actress, setActress] = useState("");
   const [loading, setLoading] = useState(false);
@@ -98,11 +94,6 @@ export default function Details() {
 
   return (
     <div>
-      <BackBtnWrapper>
-        <Link to="/search">
-          <FaChevronLeft /> Back to Search
-        </Link>
-      </BackBtnWrapper>
       {loading ? (
         <LoadingWrapper>
           <figure>
@@ -112,6 +103,10 @@ export default function Details() {
         </LoadingWrapper>
       ) : (
         <Section>
+          <Link to="/search">
+            <FaChevronLeft />
+            Back to Search
+          </Link>
           <SeiyuuWrapper>
             <SeiyuuHeader>
               <ImgWrapper>
