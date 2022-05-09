@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { marked } from "marked";
 import { Link } from "react-router-dom";
-import { FaChevronLeft } from "react-icons/fa";
 import loadingGif from "../assets/tomori.gif";
 
 const Section = styled.section`
@@ -75,25 +74,16 @@ export default function Details() {
     "https://pbs.twimg.com/media/FI8DFOcXIAs2dnB?format=jpg&name=large"
   );
   const [markdown, setMarkdown] = useState("");
-  const [error, setError] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
   const { id } = useParams();
 
   const fetchActress = async () => {
-    try {
-      setLoading(true);
-      const res = await fetch("https://api.jikan.moe/v4/people/" + id);
-      const data = await res.json();
-      console.log(data.data);
-      setActress(data.data);
-      setImgSrc(data.data.images.jpg.image_url);
-      setMarkdown(marked(data.data.about));
-    } catch (e) {
-      console.log(e);
-      alert(`Oh no error ${e}!! Refresh the page`);
-      setError(true);
-      setErrorMsg(e);
-    }
+    setLoading(true);
+    const res = await fetch("https://api.jikan.moe/v4/people/" + id);
+    const data = await res.json();
+    console.log(data.data);
+    setActress(data.data);
+    setImgSrc(data.data.images.jpg.image_url);
+    setMarkdown(marked(data.data.about));
     setLoading(false);
   };
 
@@ -112,10 +102,6 @@ export default function Details() {
         </LoadingWrapper>
       ) : (
         <Section>
-          <Link to="/search">
-            <FaChevronLeft />
-            Back to Search
-          </Link>
           <SeiyuuWrapper>
             <SeiyuuHeader>
               <ImgWrapper>
@@ -134,6 +120,7 @@ export default function Details() {
               <About dangerouslySetInnerHTML={{ __html: markdown }} />
             </div>
           </SeiyuuWrapper>
+          <Link to="/search">Back to Search</Link>
         </Section>
       )}
     </div>
